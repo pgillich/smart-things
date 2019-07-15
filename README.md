@@ -49,14 +49,17 @@ More info about install:
 * https://www.letscontrolit.com/wiki/index.php/ESPEasy#Loading_firmware
 * https://github.com/letscontrolit/ESPEasy
 
+More info about USB-serial drivers:
+* WeMos D1 mini has built-in CH341 USB-serial adapter, dirver: https://wiki.wemos.cc/downloads
+* FT232 is a cheap USB-serial adapter, driver: https://www.ftdichip.com/Drivers/VCP.htm
+* CP2102 is another cheap USB-serial adapter, driver: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+
 Firmware flash steps, using Windows:
-* Download and install USB-serial driver
-** WeMos D1 mini has built-in CH341 USB-serial adapter, dirver: https://wiki.wemos.cc/downloads
-** FT232 is a cheap USB-serial adapter
-** CP2102 is another cheap USB-serial adapter, driver: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
-* Configure Windows driver options by Driver Manager, if needed (for example: 115,200 baud)
-* Discover USB-serial COM port number by Driver Manager
-* Download and extract selected firmware zip
-* Run `flash.cmd`, set COM port, size, build num
-* After flashing, disconnect USB (power) cable
+1. Download and install USB-serial driver
+1. Configure Windows driver options by Driver Manager, if needed (for example: 115,200 baud)
+1. Discover USB-serial COM port number by Driver Manager
+1. Download and extract selected firmware zip
+1. Run `flash.cmd`, set COM port, size, build num
+1. After flashing, disconnect USB (power) cable
+
 
