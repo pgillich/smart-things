@@ -1,5 +1,5 @@
-# smart-things
-Smart things is a project to make a Smart Home connecting to Internet of Things.
+# Smart Things
+Smart Things is a project to make a Smart Home connecting to Internet of Things.
 
 ## Concept
 Sensors/actuators --> WiFi microcontrollers --> IoT gateway --> IoT
