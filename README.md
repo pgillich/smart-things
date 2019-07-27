@@ -74,4 +74,10 @@ Firmware flash steps, using Windows:
 1. Run `flash.cmd`, set COM port, size, build num
 1. After flashing, disconnect USB (power) cable
 
+Sonoff S20 was only able to flash by [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher) in `DOUT` SPI mode (maybe another flasher works also well). Advanced config:
+* Baudrate: 115200
+* Flash size: 1MByte
+* Flash speed: 40MHz
+* SPI Mode: DOUT
 
+See more details: [New Sonoff units need DOUT (not QIO) write mode when flashing](https://github.com/letscontrolit/ESPEasy/issues/474).
