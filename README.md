@@ -78,6 +78,7 @@ Sonoff S20 was only able to flash by [NodeMCU Flasher](https://github.com/nodemc
 * Baudrate: 115200
 * Flash size: 1MByte
 * Flash speed: 40MHz
-* SPI Mode: DOUT
-
+* SPI Mode: DOUT<br>
 See more details: [New Sonoff units need DOUT (not QIO) write mode when flashing](https://github.com/letscontrolit/ESPEasy/issues/474).
+
+It's not possible to set GPIO0 to 0 for flashing on Sonoff RF. Extra soldering is needed: [Hacking the SONOFF RF](https://piandmore.wordpress.com/2017/12/16/hacking-the-sonoff-rf/)
