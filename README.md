@@ -1,19 +1,22 @@
 # Smart Things
+
 Smart Things is a project to make a Smart Home connecting to Internet of Things.
 
 ## Concept
+
 Sensors/actuators --> WiFi microcontrollers --> IoT gateway --> IoT
 
 ## IoT Gateway
+
 The heart of Iot Gateway is Domoticz running on Raspberry Pi.
 
 ### Install RPi
+
 Below description is related to RPi 3 B+. More info about install:
 * https://www.balena.io/etcher/
 * https://www.raspberrypi.org/downloads/raspbian/
 * https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 * https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md
-
 
 Install steps, using Windows:
 1. Download and install Etcher (on Windows)
@@ -26,6 +29,7 @@ Install steps, using Windows:
 1. Update Raspbian
 
 ### Install Domoticz
+
 Below description is related to RPi 3 B+. More info about install:
 * https://www.domoticz.com/wiki/Raspberry_Pi
 
@@ -33,6 +37,7 @@ Install steps on RPi:
 * `curl -L https://install.domoticz.com | bash`
 
 ### Configuration
+
 Below description is related to RPi 3 B+. More info about configuration:
 * https://www.domoticz.com/DomoticzManual.pdf
 * https://www.raspberrypi.org/documentation/configuration/wireless/
@@ -40,48 +45,24 @@ Below description is related to RPi 3 B+. More info about configuration:
 1. Set RPi as WiFi Access Point (not needed: DHCP server, dnsmasq, DNS server, bridge)
 1. Set Domoticz retention config
 
-## WiFi µC
+## WiFi microconroller
+
 Below description is related to ESP8266. The selected firmware is: https://www.letscontrolit.com/wiki/index.php/ESPEasy
 
 ### Harware Variants
+
 There are a lot of HW variants for ESP8266. Suggested variants:
-* https://wiki.wemos.cc/products:d1:d1_mini for sensors and low voltage actuators (4GB, with direct USB flashing)
-* https://www.letscontrolit.com/wiki/index.php?title=Sonoff_basic or similar for high voltage actuators (1GB, external serial flaser is needed, flasher pins must be soldered)
+* https://wiki.wemos.cc/products:d1:d1_mini for sensors and low voltage actuators (4MB, with direct USB flashing)
+* https://www.letscontrolit.com/wiki/index.php?title=Sonoff_basic or similar for high voltage actuators (1MB, external serial flaser is needed, flasher pins must be soldered)
 
 ### Supported Sensors and Actuators
+
 ESPEasy supports below sensors and actuators:
 * https://www.letscontrolit.com/wiki/index.php?title=Devices
 
 Sensors and actuators on top of WeMos D1 mini:
 * https://wiki.wemos.cc/doku.php#d1_mini_shields
 
-### Flash Firmware
-More info about install:
-* https://www.letscontrolit.com/wiki/index.php/ESPEasy#Get_started
-* https://www.letscontrolit.com/wiki/index.php/ESPEasy#Loading_firmware
-* https://github.com/letscontrolit/ESPEasy
+### Flashing Firmware
 
-More info about USB-serial drivers:
-* WeMos D1 mini has built-in CH341 USB-serial adapter, dirver: https://wiki.wemos.cc/downloads
-* FT232 is a cheap USB-serial adapter, driver: https://www.ftdichip.com/Drivers/VCP.htm
-* CP2102 is another cheap USB-serial adapter, driver: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
-
-Firmware flash steps, using Windows:
-1. Download and install USB-serial driver
-1. Configure Windows driver options by Driver Manager, if needed (for example: 115,200 baud)
-1. Discover USB-serial COM port number by Driver Manager
-1. Download and extract selected firmware zip
-1. Run `flash.cmd`, set COM port, size, build num
-1. After flashing, disconnect USB (power) cable
-
-Sonoff S20 was only able to flash by [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher) in `DOUT` SPI mode (maybe another flasher works also well). Advanced config:
-* Baudrate: 115200
-* Flash size: 1MByte
-* Flash speed: 40MHz
-* SPI Mode: DOUT<br>
-See more details: [New Sonoff units need DOUT (not QIO) write mode when flashing](https://github.com/letscontrolit/ESPEasy/issues/474).
-
-It's not possible to set GPIO0 to 0 for flashing on Sonoff RF. Extra soldering is needed see:
-* [Hacking the SONOFF RF](https://piandmore.wordpress.com/2017/12/16/hacking-the-sonoff-rf/)
-* [espurna-original/Hardware/IteadStudio Sonoff RF](https://bitbucket.org/xoseperez/espurna-original/wiki/Hardware#markdown-header-iteadstudio-sonoff-rf)
-
+See: [Flashing Firmware](doc/flashing.md)
