@@ -59,6 +59,6 @@ Legacy Sonoff RF flashing:
 * [Scargill's Tech Blog, Even More Sonoff](https://tech.scargill.net/even-more-sonoff/)
 
 The simplest way for grounding GPIO0, if you have 4 hands, is continously grounding the missing R21 by hands before and during flasing, see:
-1. ![Wiring](wiring.jpg)
-1. ![R21](R21.jpg)
-1. ![Flashing](GPIO0.jpg)
+1. Sharing the ground by a small breadboard: ![Wiring](wiring.jpg)
+1. Location of missing R21: ![R21](R21.jpg)
+1. Grounding GPIO0 before USB power and during flashing (4 hands are needed): ![Flashing](GPIO0.jpg)
